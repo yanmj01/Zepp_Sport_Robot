@@ -19,7 +19,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}  # 添加了 token，因为 checkout 需要权限
-          repository: "https://github.com/FlameTech6/WeChat_Sport_Robot.git"  # 将YOUR_REPOSITORY替换为您实际的仓库地址
+          repository: FlameTech6/WeChat_Sport_Robot  # 将FlameTech6/WeChat_Sport_Robot替换为您实际的仓库地址
           ref: main  # 将main替换为您实际的分支
 
       - name: Set up Python 3.9 with architecture x64
