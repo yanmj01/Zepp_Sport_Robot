@@ -35,6 +35,6 @@ jobs:
           python3 ./main.py
 
       - name: Set environment variables
-        env:
-          ACCOUNT: ${{ secrets.ACCOUNT }}
-          PASSWORD: ${{ secrets.PASSWORD }}
+        run: |
+          echo "ACCOUNT=${{ secrets.ACCOUNT }} >> $GITHUB_ENV
+          echo "PASSWORD=${{ secrets.PASSWORD }} >> $GITHUB_ENV"
