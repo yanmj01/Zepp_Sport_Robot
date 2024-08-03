@@ -20,10 +20,11 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}  # 添加了 token，因为 checkout 需要权限
 
-      - name: Set up Python 3.9
+      - name: Set up Python 3.9 with architecture x64
         uses: actions/setup-python@v4
         with:
           python-version: "3.9.1"
+          architecture: x64
 
       - name: Install dependencies
         run: |
