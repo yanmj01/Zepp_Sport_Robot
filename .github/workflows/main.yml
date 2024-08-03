@@ -33,8 +33,3 @@ jobs:
       - name: Run the robot
         run: |
           python3 ./main.py
-
-      - name: Set environment variables
-        env:
-          ACCOUNT: ${{ secrets.ACCOUNT }}
-          PASSWORD: ${{ secrets.PASSWORD }}
