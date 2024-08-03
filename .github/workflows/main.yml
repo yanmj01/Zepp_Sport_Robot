@@ -12,7 +12,7 @@ on:
     branches: [ main ]
   schedule:
   # 定时任务
-    - cron:  '26 15 * * *' 
+    - cron:  '35 15 * * *' 
       # 定时器更改时间
       # https://tool.lu/crontab/
       # https://datetime360.com/cn/utc-cst-china-time/ #UTC时间 国际协调时间+8=北京时间
