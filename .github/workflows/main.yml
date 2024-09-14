@@ -2,11 +2,9 @@ name: wechat-sport-robot
 
 on:
   workflow_dispatch:
-    branches: [ main ]
-  push:
-    branches: [ main ]
   schedule:
     - cron: '35 15 * * *'
+
 jobs:
   run-python-script:
     runs-on: ubuntu-latest
