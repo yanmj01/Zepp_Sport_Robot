@@ -9,34 +9,17 @@ on:
     - cron: '35 15 * * *'
   pull_request:
     branches: [ main ]
-
-jobs:
-  robot:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@main
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}  # 添加了 token，因为 checkout 需要权限
-          repository: FlameTech6/WeChat_Sport_Robot  # 将FlameTech6/WeChat_Sport_Robot替换为您实际的仓库地址
-          ref: main  # 将main替换为您实际的分支
-
-      - name: Set up Python 3.9
-        uses: actions/setup-python@main
-        with:
-          python-version: 3.9
-
-      - name: Install dependencies
-        run: |
-            python -m pip install --upgrade pip
-            pip install -r requirements.txt
-
-      - name: Set environment variables
+        name: Set environment variables
         run: |
             echo "ACCOUNT=${{ secrets.ACCOUNT }} >> $GITHUB_ENV
             echo "PASSWORD=${{ secrets.PASSWORD }} >> $GITHUB_ENV"
-
-      - name: Run the robot
-        run: |
-            python3 ./main.py
+jobs:
+  run-python-script:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.11.0'
+      - run: pip install -r requirements.txt
+      - run: python ./main.py
