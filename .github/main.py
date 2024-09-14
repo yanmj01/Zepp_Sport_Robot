@@ -119,8 +119,8 @@ def sbs_api_info(user, password, step):
 
 
 if __name__ == "__main__":
-    ACCOUNT = os.environ["ACCOUNT"]
-    PASSWORD = os.environ["PASSWORD"]
+    ACCOUNT = os.environ["3053397174@qq.com"]
+    PASSWORD = os.environ["lyt.20100814"]
     account = [# 账号 密码 步数(随机则填None)
         [ACCOUNT, PASSWORD, 99999],
         #['15112345678', '12345678989', 28686],
