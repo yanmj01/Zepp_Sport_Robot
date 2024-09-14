@@ -7,12 +7,7 @@ on:
     branches: [ main ]
   schedule:
     - cron: '35 15 * * *'
-  pull_request:
-    branches: [ main ]
-        name: Set environment variables
-        run: |
-            echo "ACCOUNT=${{ secrets.ACCOUNT }} >> $GITHUB_ENV
-            echo "PASSWORD=${{ secrets.PASSWORD }} >> $GITHUB_ENV"
+
 jobs:
   run-python-script:
     runs-on: ubuntu-latest
@@ -23,3 +18,5 @@ jobs:
           python-version: '3.11.0'
       - run: pip install -r requirements.txt
       - run: python ./main.py
+      - run: echo "ACCOUNT=${{ secrets.ACCOUNT }} >> $GITHUB_ENV
+      - run: echo "PASSWORD=${{ secrets.PASSWORD }} >> $GITHUB_ENV"
