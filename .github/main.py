@@ -130,7 +130,7 @@ if __name__ == "__main__":
         step = i[2]
         # 步数为空出则以下范围随机取值
         if not step:
-            step = random.randint(49400, 98800)
+            step = random.randint(20000, 75000)
 
         login_token, userid = login(i[0], i[1])
         if not login_token:
