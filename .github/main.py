@@ -123,15 +123,14 @@ if __name__ == "__main__":
     ACCOUNT = "3053397174@qq.com"
     PASSWORD = "lyt.20100814"
     account = [# 账号 密码 步数(随机则填None)
-        [ACCOUNT, PASSWORD, 99999],
-        #['15112345678', '12345678989', 28686],
-        #['账号3', '密码3', 28888],
+        [ACCOUNT, PASSWORD, 0],
+        #['账号', '密码', 步数]
     ]
     for i in account:
         step = i[2]
         # 步数为空出则以下范围随机取值
         if not step:
-            step = random.randint(20000, 75000)
+            step = random.randint(25000, 55000)
 
         login_token, userid = login(i[0], i[1])
         if not login_token:
