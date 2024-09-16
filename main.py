@@ -102,27 +102,10 @@ def change_steps(user, userid, app_token, step=None):
         return None
 
 
-def sbs_api_info(user, password, step):
-    base_url = f"https://apis.jxcxin.cn/api/mi?user={user}&password={password}&step={step}"
-    headers = {
-        'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101 Firefox/102.0',
-        'host': 'apis.jxcxin.cn',
-        'Accept': '*/*',
-    }
-    try:
-        response = requests.get(base_url, headers=headers).json()
-        _type = f"账号*******"
-        print(f"{_type}: 修改步数{step} " + response['msg'])
-        return True
-    except Exception as err:
-        print(err)
-        return False
-
-
 if __name__ == "__main__":
-    ACCOUNT = "3053397174@qq.com"
-    PASSWORD = "lyt.20100814"
-    account = [# 账号 密码 步数(随机则填None)
+    ACCOUNT = os.environ["ACCOUNT"]
+    PASSWORD = os.environ["PASSWORD"]
+    account = [# 账号 密码 步数(随机则填None)(可填多个)
         [ACCOUNT, PASSWORD, 0],
         #['账号', '密码', 步数]
     ]
@@ -134,8 +117,7 @@ if __name__ == "__main__":
 
         login_token, userid = login(i[0], i[1])
         if not login_token:
-            print('登录失败，即将使用api重试')
-            sbs_api_info(i[0], i[1], step)
+            print('登录失败')
             continue
 
         app_token = get_app_token(login_token)
