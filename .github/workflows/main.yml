@@ -3,7 +3,7 @@ name: wechat-sport-robot
 on:
   workflow_dispatch:
   schedule:
-    - cron: '15 0 * * *'
+    - cron: '15 1 * * *'
 
 jobs:
   run-python-script:
