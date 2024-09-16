@@ -106,14 +106,14 @@ if __name__ == "__main__":
     ACCOUNT = os.environ["ACCOUNT"]
     PASSWORD = os.environ["PASSWORD"]
     account = [# 账号 密码 步数(随机则填None)(可填多个)
-        [ACCOUNT, PASSWORD, 0],
+        [ACCOUNT, PASSWORD, None],
         #['账号', '密码', 步数]
     ]
     for i in account:
         step = i[2]
         # 步数为空出则以下范围随机取值
         if not step:
-            step = random.randint(25000, 60000)
+            step = random.randint(25000, 55000)
 
         login_token, userid = login(i[0], i[1])
         if not login_token:
