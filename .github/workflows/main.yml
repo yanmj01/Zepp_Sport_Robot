@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '0 10 * * *'
-    timezone: Asia/Shanghai
+  timezone: Asia/Shanghai
 
 jobs:
   run-python-script:
