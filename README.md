@@ -27,7 +27,7 @@
 
 #### 接入第三方平台
 
-在 Zeep / Zeep Life APP里操作，
+在 Zeep / Zeep Life APP里操作
 
 ### 配置程序运行数据 (必选步骤)
 
