@@ -22,7 +22,7 @@ def get_app_token(login_token):
     url = f"https://account-cn.huami.com/v1/client/app_tokens?app_name=com.xiaomi.hm.health&dn=api-user.huami.com" \
           f"%2Capi-mifit.huami.com%2Capp-analytics.huami.com&login_token={login_token}"
     headers = {
-        'User-Agent': 'MiFit/6.3.5 (iPhone; iOS 14.0.1; Scale/2.00)'
+        'User-Agent': 'Mozilla/5.0 (Linux; Android 10; Mi 10 Pro) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.5563.15 Mobile Safari/537.36'
     }
     try:
         res = requests.get(url, headers=headers).json()
@@ -39,7 +39,7 @@ def login(user, passwd):
     registrations_url = f"https://api-user.huami.com/registrations/{user}/tokens"
     headers = {
         "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
-        "User-Agent": "MiFit/6.3.5 (iPhone; iOS 14.0.1; Scale/2.00)"
+        "User-Agent": "Mozilla/5.0 (Linux; Android 10; Mi 10 Pro) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.5563.15 Mobile Safari/537.36"
     }
     data = {
         "client_id": "HuaMi",
