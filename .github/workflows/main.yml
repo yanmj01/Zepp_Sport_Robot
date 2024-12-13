@@ -1,4 +1,4 @@
-name: wechat-sport-robot
+name: zeep-sport-robot
 
 on:
   workflow_dispatch:
