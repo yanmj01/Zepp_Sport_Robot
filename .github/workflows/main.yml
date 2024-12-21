@@ -1,4 +1,4 @@
-name: zeep-sport-robot
+name: zepp-sport-robot
 
 on:
   workflow_dispatch:
